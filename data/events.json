@@ -1,0 +1,287 @@
+[
+  {
+    "id": "evt-001",
+    "slug": "coldplay-istanbul-2026",
+    "title": "Coldplay: Music of the Spheres World Tour",
+    "description": "Experience the magic of Coldplay live in Istanbul. The Music of the Spheres World Tour brings an unforgettable spectacle of lights, music, and energy.",
+    "date": "2026-08-15T20:00:00Z",
+    "category": "concert",
+    "imageUrl": "/images/coldplay.jpg",
+    "price": 850,
+    "location": {
+      "city": "Istanbul",
+      "district": "Beşiktaş",
+      "venue": "Vodafone Park",
+      "address": "Vodafone Park, Beşiktaş, Istanbul"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "A3", "row": "A", "number": 3, "isAvailable": false },
+      { "id": "A4", "row": "A", "number": 4, "isAvailable": true },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": true },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": false },
+      { "id": "B3", "row": "B", "number": 3, "isAvailable": true },
+      { "id": "B4", "row": "B", "number": 4, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-002",
+    "slug": "hamlet-ankara-state-theater",
+    "title": "Hamlet - Ankara State Theater",
+    "description": "A modern interpretation of Shakespeare's timeless tragedy. Experience the psychological depth of Hamlet in this powerful theatrical production.",
+    "date": "2026-07-22T19:30:00Z",
+    "category": "theater",
+    "imageUrl": "/images/hamlet.jpg",
+    "price": 250,
+    "location": {
+      "city": "Ankara",
+      "district": "Çankaya",
+      "venue": "Ankara State Theater",
+      "address": "Atatürk Bulvarı, Çankaya, Ankara"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "A3", "row": "A", "number": 3, "isAvailable": true },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": false },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": true },
+      { "id": "C1", "row": "C", "number": 1, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-003",
+    "slug": "fenerbahce-vs-galatasaray-2026",
+    "title": "Fenerbahçe vs Galatasaray - Derby Match",
+    "description": "The biggest derby in Turkish football! Don't miss the intense rivalry between Fenerbahçe and Galatasaray at Şükrü Saracoğlu Stadium.",
+    "date": "2026-09-10T19:00:00Z",
+    "category": "sports",
+    "imageUrl": "/images/derby.jpg",
+    "price": 500,
+    "location": {
+      "city": "Istanbul",
+      "district": "Kadıköy",
+      "venue": "Şükrü Saracoğlu Stadium",
+      "address": "Kadıköy, Istanbul"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": false },
+      { "id": "A3", "row": "A", "number": 3, "isAvailable": false },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": true },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": true },
+      { "id": "C1", "row": "C", "number": 1, "isAvailable": true },
+      { "id": "C2", "row": "C", "number": 2, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-004",
+    "slug": "tech-summit-2026-izmir",
+    "title": "Tech Summit 2026 - Innovation & AI",
+    "description": "Join leading tech innovators and AI experts at Turkey's premier technology conference. Network with industry leaders and discover the future of tech.",
+    "date": "2026-10-05T09:00:00Z",
+    "category": "conference",
+    "imageUrl": "/images/tech-summit.jpg",
+    "price": 1200,
+    "location": {
+      "city": "Izmir",
+      "district": "Konak",
+      "venue": "Izmir Congress Center",
+      "address": "Konak, Izmir"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "A3", "row": "A", "number": 3, "isAvailable": true },
+      { "id": "A4", "row": "A", "number": 4, "isAvailable": true },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": true },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-005",
+    "slug": "beethoven-symphony-9-istanbul",
+    "title": "Beethoven Symphony No. 9 - Istanbul Symphony",
+    "description": "A magnificent performance of Beethoven's Ninth Symphony featuring the Istanbul Symphony Orchestra and Choir.",
+    "date": "2026-11-12T20:00:00Z",
+    "category": "concert",
+    "imageUrl": "/images/beethoven.jpg",
+    "price": 350,
+    "location": {
+      "city": "Istanbul",
+      "district": "Şişli",
+      "venue": "Cemal Reşit Rey Concert Hall",
+      "address": "Harbiye, Şişli, Istanbul"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": false },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": true },
+      { "id": "C1", "row": "C", "number": 1, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-006",
+    "slug": "modern-dance-ankara-2026",
+    "title": "Contemporary Dance Festival",
+    "description": "An evening of breathtaking contemporary dance performances by international and local artists.",
+    "date": "2026-08-30T19:00:00Z",
+    "category": "theater",
+    "imageUrl": "/images/dance.jpg",
+    "price": 180,
+    "location": {
+      "city": "Ankara",
+      "district": "Kızılay",
+      "venue": "MEB Şura Salonu",
+      "address": "Kızılay, Ankara"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "A3", "row": "A", "number": 3, "isAvailable": true },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-007",
+    "slug": "formula-1-istanbul-park-2026",
+    "title": "Formula 1 Turkish Grand Prix 2026",
+    "description": "The return of F1 to Istanbul Park! Watch the world's best drivers compete on one of the most challenging circuits.",
+    "date": "2026-09-20T14:00:00Z",
+    "category": "sports",
+    "imageUrl": "/images/f1.jpg",
+    "price": 2500,
+    "location": {
+      "city": "Istanbul",
+      "district": "Tuzla",
+      "venue": "Intercity Istanbul Park",
+      "address": "Tuzla, Istanbul"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "A3", "row": "A", "number": 3, "isAvailable": false },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": true },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": true },
+      { "id": "B3", "row": "B", "number": 3, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-008",
+    "slug": "startup-founders-conference-izmir",
+    "title": "Startup Founders Conference 2026",
+    "description": "Connect with startup founders, VCs, and entrepreneurs. Learn from successful founders and grow your network.",
+    "date": "2026-07-15T10:00:00Z",
+    "category": "conference",
+    "imageUrl": "/images/startup.jpg",
+    "price": 800,
+    "location": {
+      "city": "Izmir",
+      "district": "Bornova",
+      "venue": "Izmir Institute of Technology",
+      "address": "Bornova, Izmir"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "A3", "row": "A", "number": 3, "isAvailable": true },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": true },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": false }
+    ]
+  },
+  {
+    "id": "evt-009",
+    "slug": "jazz-night-ankara-2026",
+    "title": "International Jazz Night",
+    "description": "An unforgettable evening of smooth jazz featuring renowned international and Turkish jazz musicians.",
+    "date": "2026-10-18T21:00:00Z",
+    "category": "concert",
+    "imageUrl": "/images/jazz.jpg",
+    "price": 300,
+    "location": {
+      "city": "Ankara",
+      "district": "Çankaya",
+      "venue": "Jazz Bar Ankara",
+      "address": "Tunalı Hilmi, Çankaya, Ankara"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": false },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": true },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": true },
+      { "id": "C1", "row": "C", "number": 1, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-010",
+    "slug": "basketball-playoffs-izmir",
+    "title": "Basketball Playoffs - Turkish League Finals",
+    "description": "The thrilling finale of the Turkish Basketball League. Watch the best teams compete for the championship title.",
+    "date": "2026-06-25T19:30:00Z",
+    "category": "sports",
+    "imageUrl": "/images/basketball.jpg",
+    "price": 400,
+    "location": {
+      "city": "Izmir",
+      "district": "Karşıyaka",
+      "venue": "Karşıyaka Arena",
+      "address": "Karşıyaka, Izmir"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "A3", "row": "A", "number": 3, "isAvailable": true },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": false },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": true },
+      { "id": "B3", "row": "B", "number": 3, "isAvailable": true },
+      { "id": "C1", "row": "C", "number": 1, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-011",
+    "slug": "design-thinking-workshop-istanbul",
+    "title": "Design Thinking Workshop 2026",
+    "description": "A hands-on workshop exploring design thinking methodologies and innovation strategies for product development.",
+    "date": "2026-08-05T10:00:00Z",
+    "category": "conference",
+    "imageUrl": "/images/design.jpg",
+    "price": 650,
+    "location": {
+      "city": "Istanbul",
+      "district": "Maslak",
+      "venue": "Istanbul Tech Hub",
+      "address": "Maslak, Istanbul"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "A3", "row": "A", "number": 3, "isAvailable": true },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": true }
+    ]
+  },
+  {
+    "id": "evt-012",
+    "slug": "romeo-juliet-istanbul-opera",
+    "title": "Romeo and Juliet Ballet",
+    "description": "A stunning ballet adaptation of Shakespeare's tragic love story, performed by the Istanbul State Opera and Ballet.",
+    "date": "2026-09-28T19:30:00Z",
+    "category": "theater",
+    "imageUrl": "/images/ballet.jpg",
+    "price": 280,
+    "location": {
+      "city": "Istanbul",
+      "district": "Taksim",
+      "venue": "Atatürk Cultural Center",
+      "address": "Taksim Square, Istanbul"
+    },
+    "seats": [
+      { "id": "A1", "row": "A", "number": 1, "isAvailable": true },
+      { "id": "A2", "row": "A", "number": 2, "isAvailable": true },
+      { "id": "B1", "row": "B", "number": 1, "isAvailable": false },
+      { "id": "B2", "row": "B", "number": 2, "isAvailable": true },
+      { "id": "C1", "row": "C", "number": 1, "isAvailable": true },
+      { "id": "C2", "row": "C", "number": 2, "isAvailable": true }
+    ]
+  }
+]

@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.github/agents/
+.github/instructions/
+CASE_STUDY.md
+DOKUMANTASYON.md
+NEXTAUTH-vs-REDUX.md
+DOKUMANTASYON.md
+PROJE-YAPISI.md
