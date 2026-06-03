@@ -34,8 +34,8 @@ const CheckoutPage: NextPage = () => {
 
   if (!eventId || seats.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="bg-white p-8 rounded-lg shadow-md text-center">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center">
+        <div className="bg-white p-8 rounded-2xl shadow-2xl text-center border border-gray-100 max-w-md">
           <h2 className="text-2xl font-bold mb-4">No Event Selected</h2>
           <p className="text-gray-600 mb-6">
             Please select an event and seats before proceeding to checkout.
@@ -51,8 +51,8 @@ const CheckoutPage: NextPage = () => {
     const orderDate = new Date(order.createdAt)
 
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12">
-        <div className="bg-white p-8 rounded-lg shadow-md max-w-2xl w-full">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center py-12">
+        <div className="bg-white p-8 rounded-2xl shadow-2xl max-w-2xl w-full border border-gray-100">
           <div className="text-center mb-6">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
               <svg
@@ -102,15 +102,15 @@ const CheckoutPage: NextPage = () => {
               </div>
               <div className="flex justify-between pt-4 border-t border-gray-200">
                 <span className="font-semibold">Total:</span>
-                <span className="font-bold text-lg text-blue-600">
+                <span className="font-bold text-2xl bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
                   ₺{totalPrice.toLocaleString('tr-TR')}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="bg-blue-50 p-4 rounded-lg mb-6">
-            <p className="text-sm text-blue-800">
+          <div className="bg-orange-50 border border-orange-200 p-4 rounded-lg mb-6">
+            <p className="text-sm text-orange-800">
               A confirmation email has been sent to <strong>{order.personalInfo.email}</strong>
             </p>
           </div>
@@ -161,7 +161,7 @@ const CheckoutPage: NextPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 py-12">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Checkout</h1>
 

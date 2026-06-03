@@ -29,8 +29,8 @@ export default function ProfileLayout({ children }: ProfileLayoutProps) {
                     href={item.path}
                     className={`block px-4 py-2 rounded-md transition-colors ${
                       isActive(item.path)
-                        ? 'bg-blue-600 text-white'
-                        : 'text-gray-700 hover:bg-gray-100'
+                        ? 'bg-gradient-to-r from-orange-600 to-amber-500 text-white shadow-md'
+                        : 'text-gray-700 hover:bg-orange-50'
                     }`}
                   >
                     {item.label}

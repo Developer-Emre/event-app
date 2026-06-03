@@ -50,7 +50,7 @@ const OrdersPage: NextPage = () => {
       <div className="bg-white rounded-lg shadow-md p-6">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-gray-900">My Orders</h1>
-          <Badge variant="info">{orders.length} Order{orders.length > 1 ? 's' : ''}</Badge>
+          <Badge variant="orange">{orders.length} Order{orders.length > 1 ? 's' : ''}</Badge>
         </div>
 
         <div className="space-y-4">
@@ -59,7 +59,7 @@ const OrdersPage: NextPage = () => {
             return (
               <div
                 key={order.id}
-                className="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors"
+                className="border border-gray-200 rounded-lg p-6 hover:border-orange-300 hover:shadow-lg transition-all"
               >
                 <div className="flex justify-between items-start mb-4">
                   <div>
@@ -86,7 +86,7 @@ const OrdersPage: NextPage = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 mb-1">Total Amount</p>
-                    <p className="text-lg font-bold text-blue-600">
+                    <p className="text-xl font-bold bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
                       ₺{order.totalPrice.toLocaleString('tr-TR')}
                     </p>
                   </div>
@@ -119,11 +119,16 @@ const OrdersPage: NextPage = () => {
                     </div>
                     <div>
                       <p className="font-medium text-gray-700 mb-2">Delivery Address</p>
-                      <p>{order.personalInfo.address}</p>
+                      <p>{order.personalInfo.street}</p>
                       <p>
                         {order.personalInfo.district}, {order.personalInfo.city}
                       </p>
                       <p>Turkey</p>
+                      {order.personalInfo.address && (
+                        <p className="text-xs text-gray-600 mt-1">
+                          {order.personalInfo.address}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

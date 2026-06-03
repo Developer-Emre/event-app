@@ -12,6 +12,7 @@ export default function Input({
   helperText,
   className = '',
   id,
+  required,
   ...props
 }: InputProps) {
   const inputId = id || label?.toLowerCase().replace(/\s+/g, '-')
@@ -24,14 +25,16 @@ export default function Input({
           className="block text-sm font-medium text-gray-700 mb-1"
         >
           {label}
+          {required && <span className="text-red-500 ml-1">*</span>}
         </label>
       )}
       <input
         id={inputId}
-        className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+        className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all ${
           error ? 'border-red-500' : 'border-gray-300'
         } ${className}`}
         aria-describedby={error ? `${inputId}-error` : helperText ? `${inputId}-helper` : undefined}
+        required={required}
         {...props}
       />
       {error && (

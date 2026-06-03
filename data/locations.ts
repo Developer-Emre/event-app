@@ -1,5 +1,5 @@
-import { getCities, getDistrictsByCityCode } from 'turkey-neighbourhoods'
-import type { City, District } from '@/types/location'
+import { getCities, getDistrictsByCityCode, getDistrictsAndNeighbourhoodsByCityCode } from 'turkey-neighbourhoods'
+import type { City, District, Street } from '@/types/location'
 
 // Get all 81 Turkish cities from the library
 const turkishCities = getCities()
@@ -18,4 +18,25 @@ export const districts: District[] = cities.flatMap((city) => {
     name: districtName,
     cityId: city.id,
   }))
+})
+
+// Generate all streets (neighbourhoods/mahalle) for all cities
+export const streets: Street[] = cities.flatMap((city) => {
+  const cityData = getDistrictsAndNeighbourhoodsByCityCode(city.id)
+  
+  return Object.entries(cityData).flatMap(([districtName, neighbourhoodList]) => {
+    // Find the district ID
+    const district = districts.find(
+      (d) => d.name === districtName && d.cityId === city.id
+    )
+    
+    if (!district) return []
+    
+    return neighbourhoodList.map((neighbourhoodName, index) => ({
+      id: `${district.id}${String(index + 1).padStart(3, '0')}`, // e.g., "3401001", "3401002"
+      name: neighbourhoodName,
+      districtId: district.id,
+      cityId: city.id,
+    }))
+  })
 })

@@ -22,8 +22,8 @@ export default function CheckoutStep1({
 
       <div className="mb-6">
         <h3 className="text-lg font-semibold mb-2">{eventTitle}</h3>
-        <div className="bg-gray-50 p-4 rounded-lg">
-          <h4 className="font-medium mb-2">Selected Seats:</h4>
+        <div className="bg-orange-50 border border-orange-100 p-4 rounded-lg">
+          <h4 className="font-medium mb-2 text-orange-900">Selected Seats:</h4>
           <div className="space-y-2">
             {seats.map((seat) => (
               <div key={seat.id} className="flex justify-between text-sm">

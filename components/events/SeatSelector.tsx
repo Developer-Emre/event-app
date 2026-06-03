@@ -38,7 +38,7 @@ export default function SeatSelector({ seats, onSeatsSelect }: SeatSelectorProps
             <span>Available</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-500 rounded"></div>
+            <div className="w-8 h-8 bg-orange-500 rounded"></div>
             <span>Selected</span>
           </div>
           <div className="flex items-center gap-2">
@@ -48,7 +48,7 @@ export default function SeatSelector({ seats, onSeatsSelect }: SeatSelectorProps
         </div>
       </div>
 
-      <div className="mb-4 bg-gray-800 text-white text-center py-2 rounded">
+      <div className="mb-4 bg-gradient-to-r from-orange-600 to-amber-500 text-white text-center py-3 rounded-lg font-bold shadow-lg">
         STAGE
       </div>
 
@@ -70,7 +70,7 @@ export default function SeatSelector({ seats, onSeatsSelect }: SeatSelectorProps
                         !seat.isAvailable
                           ? 'bg-gray-300 cursor-not-allowed'
                           : isSelected
-                          ? 'bg-blue-500 text-white hover:bg-blue-600'
+                          ? 'bg-orange-500 text-white hover:bg-orange-600 shadow-md'
                           : 'bg-green-500 text-white hover:bg-green-600'
                       }`}
                       title={`Seat ${seat.row}${seat.number}`}
@@ -86,12 +86,12 @@ export default function SeatSelector({ seats, onSeatsSelect }: SeatSelectorProps
       </div>
 
       {selectedSeats.length > 0 && (
-        <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-          <h4 className="font-semibold mb-2">Selected Seats:</h4>
-          <p className="text-sm">
+        <div className="mt-6 p-4 bg-orange-50 border border-orange-200 rounded-lg">
+          <h4 className="font-semibold text-orange-900 mb-2">Selected Seats:</h4>
+          <p className="text-sm text-orange-800">
             {selectedSeats.map((s) => `${s.row}${s.number}`).join(', ')}
           </p>
-          <p className="text-sm font-semibold mt-2">
+          <p className="text-sm font-semibold mt-2 text-orange-900">
             Total: {selectedSeats.length} seat{selectedSeats.length > 1 ? 's' : ''}
           </p>
         </div>

@@ -19,18 +19,19 @@ const EventDetailPage: NextPage<EventDetailPageProps> = ({ event }) => {
   const [selectedSeats, setSelectedSeats] = useState<Seat[]>([])
 
   const eventDate = new Date(event.date)
-  const formattedDate = eventDate.toLocaleDateString('tr-TR', {
+  const formattedDate = eventDate.toLocaleDateString('en-US', {
     weekday: 'long',
     day: 'numeric',
     month: 'long',
     year: 'numeric',
   })
-  const formattedTime = eventDate.toLocaleTimeString('tr-TR', {
+  const formattedTime = eventDate.toLocaleTimeString('en-US', {
     hour: '2-digit',
     minute: '2-digit',
   })
 
   const totalPrice = selectedSeats.length * event.price
+  const availableSeats = event.seats.filter((s) => s.isAvailable).length
 
   const handleBuyTicket = () => {
     if (selectedSeats.length === 0) return
@@ -52,34 +53,43 @@ const EventDetailPage: NextPage<EventDetailPageProps> = ({ event }) => {
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <button
-          onClick={() => router.back()}
-          className="flex items-center text-blue-600 hover:text-blue-700 mb-6"
-        >
-          <svg
-            className="w-5 h-5 mr-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+    <div className="bg-gradient-to-br from-orange-50 via-white to-amber-50 min-h-screen">
+      {/* Header with gradient */}
+      <div className="bg-gradient-to-r from-orange-600 to-amber-500 pt-8 pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <button
+            onClick={() => router.back()}
+            className="flex items-center text-white/90 hover:text-white mb-6 transition-colors"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-          Back to Events
-        </button>
+            <svg
+              className="w-5 h-5 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            Back to Events
+          </button>
+        </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
-              <div className="h-96 bg-gray-200 flex items-center justify-center">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Event Card */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              {/* Event Image */}
+              <div className="relative h-80 bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <svg
-                  className="w-32 h-32 text-gray-400"
+                  className="w-24 h-24 text-orange-300/50"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -87,23 +97,26 @@ const EventDetailPage: NextPage<EventDetailPageProps> = ({ event }) => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    strokeWidth={1.5}
+                    d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
                   />
                 </svg>
-              </div>
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <h1 className="text-3xl font-bold text-gray-900 flex-1">
-                    {event.title}
-                  </h1>
-                  <Badge>{event.category}</Badge>
+                <div className="absolute top-4 right-4">
+                  <Badge variant="orange">{event.category}</Badge>
                 </div>
+              </div>
 
-                <div className="space-y-3 mb-6">
-                  <div className="flex items-center text-gray-700">
+              {/* Event Details */}
+              <div className="p-8">
+                <h1 className="text-4xl font-bold text-gray-900 mb-6">
+                  {event.title}
+                </h1>
+
+                {/* Date & Time */}
+                <div className="flex items-start space-x-4 p-4 bg-orange-50 rounded-xl mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                     <svg
-                      className="w-5 h-5 mr-3"
+                      className="w-6 h-6 text-white"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -115,14 +128,19 @@ const EventDetailPage: NextPage<EventDetailPageProps> = ({ event }) => {
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-                    <span>
-                      {formattedDate} at {formattedTime}
-                    </span>
                   </div>
+                  <div>
+                    <p className="text-sm font-medium text-gray-600">Date & Time</p>
+                    <p className="text-lg font-semibold text-gray-900">{formattedDate}</p>
+                    <p className="text-gray-700">{formattedTime}</p>
+                  </div>
+                </div>
 
-                  <div className="flex items-start text-gray-700">
+                {/* Location */}
+                <div className="flex items-start space-x-4 p-4 bg-orange-50 border border-orange-100 rounded-xl mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                     <svg
-                      className="w-5 h-5 mr-3 mt-0.5"
+                      className="w-6 h-6 text-white"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -140,51 +158,61 @@ const EventDetailPage: NextPage<EventDetailPageProps> = ({ event }) => {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       />
                     </svg>
-                    <div>
-                      <p className="font-semibold">{event.location.venue}</p>
-                      <p className="text-sm">
-                        {event.location.district}, {event.location.city}
-                      </p>
-                      <p className="text-sm text-gray-600">
-                        {event.location.address}
-                      </p>
-                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-gray-600">Venue</p>
+                    <p className="text-lg font-semibold text-gray-900">{event.location.venue}</p>
+                    <p className="text-gray-700">{event.location.district}, {event.location.city}</p>
+                    <p className="text-sm text-gray-600 mt-1">{event.location.address}</p>
                   </div>
                 </div>
 
-                <div className="border-t border-gray-200 pt-6">
-                  <h2 className="text-xl font-semibold mb-3">About This Event</h2>
-                  <p className="text-gray-700 leading-relaxed">
+                {/* Description */}
+                <div className="pt-6 border-t border-gray-200">
+                  <h2 className="text-2xl font-bold mb-4 text-gray-900">About This Event</h2>
+                  <p className="text-gray-700 leading-relaxed text-lg">
                     {event.description}
                   </p>
                 </div>
               </div>
             </div>
 
-            <SeatSelector seats={event.seats} onSeatsSelect={setSelectedSeats} />
+            {/* Seat Selector */}
+            <div className="bg-white rounded-2xl shadow-xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-gray-900">Select Your Seats</h2>
+              <SeatSelector seats={event.seats} onSeatsSelect={setSelectedSeats} />
+            </div>
           </div>
 
+          {/* Booking Card */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-md p-6 sticky top-8">
-              <div className="text-center mb-6">
-                <p className="text-sm text-gray-600 mb-2">Price per ticket</p>
-                <p className="text-4xl font-bold text-blue-600">
-                  ₺{event.price.toLocaleString('tr-TR')}
+            <div className="bg-white rounded-2xl shadow-xl p-6 sticky top-24">
+              <div className="text-center pb-6 border-b border-gray-200">
+                <p className="text-sm font-medium text-gray-600 mb-2">Ticket Price</p>
+                <p className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
+                  ₺{event.price.toLocaleString()}
                 </p>
               </div>
 
               {selectedSeats.length > 0 && (
-                <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-                  <div className="flex justify-between mb-2">
-                    <span className="text-gray-700">
-                      {selectedSeats.length} ticket{selectedSeats.length > 1 ? 's' : ''}
+                <div className="my-6 p-5 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-orange-200">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="font-semibold text-gray-900">
+                      {selectedSeats.length} Ticket{selectedSeats.length > 1 ? 's' : ''}
                     </span>
-                    <span className="font-semibold">
-                      ₺{totalPrice.toLocaleString('tr-TR')}
+                    <span className="text-2xl font-bold text-orange-600">
+                      ₺{totalPrice.toLocaleString()}
                     </span>
                   </div>
-                  <div className="text-sm text-gray-600">
-                    Seats: {selectedSeats.map((s) => `${s.row}${s.number}`).join(', ')}
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {selectedSeats.map((s) => (
+                      <span
+                        key={s.id}
+                        className="px-3 py-1 bg-white rounded-lg text-sm font-medium text-gray-700 shadow-sm"
+                      >
+                        {s.row}{s.number}
+                      </span>
+                    ))}
                   </div>
                 </div>
               )}
@@ -194,20 +222,28 @@ const EventDetailPage: NextPage<EventDetailPageProps> = ({ event }) => {
                 disabled={selectedSeats.length === 0}
                 fullWidth
                 size="lg"
+                className="mb-6"
               >
-                {selectedSeats.length === 0 ? 'Select Seats' : 'Buy Tickets'}
+                {selectedSeats.length === 0 ? 'Select Seats' : 'Continue to Checkout'}
               </Button>
 
-              <div className="mt-6 pt-6 border-t border-gray-200">
-                <p className="text-sm text-gray-600 mb-2">
-                  <strong>
-                    {event.seats.filter((s) => s.isAvailable).length}
-                  </strong>{' '}
-                  seats available
-                </p>
-                <p className="text-sm text-gray-600">
-                  Secure booking • Instant confirmation
-                </p>
+              <div className="space-y-3 pt-6 border-t border-gray-200">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-gray-600">Available Seats</span>
+                  <span className="font-semibold text-gray-900">{availableSeats}</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Secure Booking</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  <span>Instant Confirmation</span>
+                </div>
               </div>
             </div>
           </div>

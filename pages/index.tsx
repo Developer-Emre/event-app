@@ -31,9 +31,8 @@ const HomePage: NextPage = () => {
     }
   }, [router.query.category])
 
-  // Fetch events - memoized to prevent unnecessary re-renders
+  // Fetch events
   useEffect(() => {
-    // Skip if search is between 1-2 characters
     if (debouncedSearch.length > 0 && debouncedSearch.length < 3) {
       return
     }
@@ -53,8 +52,8 @@ const HomePage: NextPage = () => {
             signal: controller.signal,
           })
         ).unwrap()
-      } catch (err: any) {
-        if (err?.name !== 'AbortError' && isActive) {
+      } catch (err) {
+        if (err instanceof Error && err.name !== 'AbortError' && isActive) {
           console.error('Failed to fetch events:', err)
         }
       }
@@ -86,17 +85,23 @@ const HomePage: NextPage = () => {
   }, [dispatch])
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            Discover Amazing Events
-          </h1>
-          <p className="text-gray-600">
-            Find and book tickets for concerts, sports, theater, and conferences across Turkey
-          </p>
+    <div className=" min-h-screen">
+      {/* Header Section */}
+      <div className="bg-gradient-to-r from-orange-600 to-amber-500 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="text-center">
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+              Discover Amazing Events
+            </h1>
+            <p className="text-lg text-orange-100 max-w-2xl mx-auto">
+              Find and book tickets for the best concerts, sports, theater shows, and conferences
+            </p>
+          </div>
         </div>
+      </div>
 
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <EventFilter
           search={search}
           category={category}

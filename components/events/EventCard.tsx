@@ -23,14 +23,14 @@ export default function EventCard({ event }: EventCardProps) {
     concert: 'info' as const,
     theater: 'warning' as const,
     sports: 'success' as const,
-    conference: 'danger' as const,
+    conference: 'orange' as const,
   }
 
   return (
     <Link href={`/event/${event.slug}`}>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
-        <div className="relative h-48 w-full bg-gray-200">
-          <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+      <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100">
+        <div className="relative h-48 w-full bg-gradient-to-br from-orange-100 to-amber-100">
+          <div className="absolute inset-0 flex items-center justify-center text-orange-300">
             <svg
               className="w-16 h-16"
               fill="none"
@@ -46,22 +46,22 @@ export default function EventCard({ event }: EventCardProps) {
             </svg>
           </div>
         </div>
-        <div className="p-4">
+        <div className="p-5">
           <div className="flex items-start justify-between mb-2">
-            <h3 className="text-lg font-semibold text-gray-900 line-clamp-2 flex-1">
+            <h3 className="text-lg font-bold text-gray-900 line-clamp-2 flex-1 pr-2">
               {event.title}
             </h3>
             <Badge variant={categoryVariant[event.category as keyof typeof categoryVariant] || 'default'}>
               {event.category}
             </Badge>
           </div>
-          <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+          <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
             {event.description}
           </p>
-          <div className="space-y-2">
-            <div className="flex items-center text-sm text-gray-500">
+          <div className="space-y-2.5">
+            <div className="flex items-center text-sm text-gray-600">
               <svg
-                className="w-4 h-4 mr-2"
+                className="w-4 h-4 mr-2 text-gray-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -75,9 +75,9 @@ export default function EventCard({ event }: EventCardProps) {
               </svg>
               {formattedDate} - {formattedTime}
             </div>
-            <div className="flex items-center text-sm text-gray-500">
+            <div className="flex items-center text-sm text-gray-600">
               <svg
-                className="w-4 h-4 mr-2"
+                className="w-4 h-4 mr-2 text-gray-400"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -97,12 +97,12 @@ export default function EventCard({ event }: EventCardProps) {
               </svg>
               {event.location.city} - {event.location.venue}
             </div>
-            <div className="flex items-center justify-between mt-4">
-              <span className="text-xl font-bold text-blue-600">
+            <div className="flex items-center justify-between pt-3 mt-3 border-t border-gray-100">
+              <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">
                 ₺{event.price.toLocaleString('tr-TR')}
               </span>
-              <span className="text-sm text-gray-500">
-                {event.seats.filter((s) => s.isAvailable).length} seats available
+              <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">
+                {event.seats.filter((s) => s.isAvailable).length} seats left
               </span>
             </div>
           </div>

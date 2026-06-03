@@ -28,9 +28,9 @@ const ProfilePage: NextPage = () => {
           </div>
         </div>
 
-        <div className="mt-8 p-4 bg-blue-50 rounded-lg">
-          <h3 className="font-semibold text-blue-900 mb-2">Welcome to EventApp!</h3>
-          <p className="text-sm text-blue-800">
+        <div className="mt-8 p-4 bg-orange-50 border border-orange-200 rounded-lg">
+          <h3 className="font-semibold text-orange-900 mb-2">Welcome to EventPass!</h3>
+          <p className="text-sm text-orange-800">
             Browse amazing events, book your tickets, and manage your orders all in one place.
           </p>
         </div>

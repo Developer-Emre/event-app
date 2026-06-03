@@ -34,8 +34,8 @@ export default function EventFilter({
   onCityChange,
 }: EventFilterProps) {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md mb-8">
-      <h2 className="text-lg font-semibold mb-4">Filter Events</h2>
+    <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 mb-8">
+      <h2 className="text-lg font-bold text-gray-900 mb-4">Filter Events</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Input
           label="Search"
@@ -52,7 +52,7 @@ export default function EventFilter({
           <select
             value={category}
             onChange={(e: ChangeEvent<HTMLSelectElement>) => onCategoryChange(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
           >
             {categories.map((cat) => (
               <option key={cat.value} value={cat.value}>
@@ -69,7 +69,7 @@ export default function EventFilter({
           <select
             value={city}
             onChange={(e: ChangeEvent<HTMLSelectElement>) => onCityChange(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
           >
             {cities.map((c) => (
               <option key={c.value} value={c.value}>

@@ -21,7 +21,7 @@ export default function StepIndicator({ currentStep, totalSteps }: StepIndicator
                   step.number < currentStep
                     ? 'bg-green-500 text-white'
                     : step.number === currentStep
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-gradient-to-r from-orange-600 to-amber-500 text-white shadow-md'
                     : 'bg-gray-300 text-gray-600'
                 }`}
               >
@@ -45,7 +45,7 @@ export default function StepIndicator({ currentStep, totalSteps }: StepIndicator
               </div>
               <p
                 className={`mt-2 text-sm font-medium ${
-                  step.number === currentStep ? 'text-blue-600' : 'text-gray-600'
+                  step.number === currentStep ? 'text-orange-600' : 'text-gray-600'
                 }`}
               >
                 {step.label}

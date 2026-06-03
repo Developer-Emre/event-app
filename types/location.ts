@@ -9,7 +9,15 @@ export interface District {
   cityId: string
 }
 
+export interface Street {
+  id: string
+  name: string
+  districtId: string
+  cityId: string
+}
+
 export interface LocationData {
   city: string
   district: string
+  street: string
 }

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 
 interface BadgeProps {
   children: ReactNode
-  variant?: 'default' | 'success' | 'warning' | 'danger' | 'info'
+  variant?: 'default' | 'success' | 'warning' | 'danger' | 'info' | 'orange'
 }
 
 export default function Badge({ children, variant = 'default' }: BadgeProps) {
@@ -12,6 +12,7 @@ export default function Badge({ children, variant = 'default' }: BadgeProps) {
     warning: 'bg-yellow-100 text-yellow-800',
     danger: 'bg-red-100 text-red-800',
     info: 'bg-blue-100 text-blue-800',
+    orange: 'bg-orange-100 text-orange-800',
   }
   
   return (

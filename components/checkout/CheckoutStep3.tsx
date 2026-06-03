@@ -92,8 +92,8 @@ export default function CheckoutStep3({
     <div className="bg-white rounded-lg shadow-md p-6">
       <h2 className="text-2xl font-bold mb-6">Payment Information</h2>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
-        <p className="text-sm text-blue-800">
+      <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
+        <p className="text-sm text-orange-800">
           <strong>Test Mode:</strong> Use any 16-digit card number for testing.
         </p>
       </div>

@@ -4,7 +4,7 @@ import type { LocationData } from '@/types/location'
 import Input from '@/components/ui/Input'
 import Button from '@/components/ui/Button'
 import LocationDropdown from '@/components/events/LocationDropdown'
-import { cities, districts } from '@/data/locations'
+import { cities, districts, streets } from '@/data/locations'
 
 interface CheckoutStep2Props {
   initialData: PersonalInfo | null
@@ -20,6 +20,7 @@ export default function CheckoutStep2({ initialData, onNext, onBack }: CheckoutS
       phone: '',
       city: '',
       district: '',
+      street: '',
       address: '',
     }
   )
@@ -30,11 +31,13 @@ export default function CheckoutStep2({ initialData, onNext, onBack }: CheckoutS
     // Get display names from IDs
     const cityName = cities.find((c) => c.id === location.city)?.name || ''
     const districtName = districts.find((d) => d.id === location.district)?.name || ''
+    const streetName = streets.find((s) => s.id === location.street)?.name || ''
 
     setFormData((prev) => ({
       ...prev,
       city: cityName,
       district: districtName,
+      street: streetName,
     }))
   }, [])
 
@@ -51,9 +54,8 @@ export default function CheckoutStep2({ initialData, onNext, onBack }: CheckoutS
       newErrors.email = 'Email is invalid'
     }
 
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone is required'
-    } else if (!/^[0-9]{10,11}$/.test(formData.phone.replace(/\s/g, ''))) {
+    // Phone is optional, but validate format if provided
+    if (formData.phone.trim() && !/^[0-9]{10,11}$/.test(formData.phone.replace(/\s/g, ''))) {
       newErrors.phone = 'Phone must be 10-11 digits'
     }
 
@@ -63,6 +65,10 @@ export default function CheckoutStep2({ initialData, onNext, onBack }: CheckoutS
 
     if (!formData.district.trim()) {
       newErrors.district = 'District is required'
+    }
+
+    if (!formData.street.trim()) {
+      newErrors.street = 'Street is required'
     }
 
     if (!formData.address.trim()) {
@@ -114,8 +120,7 @@ export default function CheckoutStep2({ initialData, onNext, onBack }: CheckoutS
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             error={errors.phone}
-            placeholder="5551234567"
-            required
+            placeholder="5551234567 (optional)"
           />
         </div>
 
@@ -130,18 +135,21 @@ export default function CheckoutStep2({ initialData, onNext, onBack }: CheckoutS
           {errors.district && (
             <p className="text-sm text-red-600">{errors.district}</p>
           )}
+          {errors.street && (
+            <p className="text-sm text-red-600">{errors.street}</p>
+          )}
 
           <div>
             <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
-              Street Address <span className="text-red-500">*</span>
+              Address <span className="text-red-500">*</span>
             </label>
             <textarea
               id="address"
               value={formData.address}
               onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-              placeholder="Street name, building number, apartment, etc."
+              placeholder="Enter your street name, building number, apartment number, floor, etc."
               rows={3}
-              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all resize-none ${
                 errors.address ? 'border-red-500' : 'border-gray-300'
               }`}
             />

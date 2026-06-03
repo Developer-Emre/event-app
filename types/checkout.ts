@@ -11,6 +11,7 @@ export interface PersonalInfo {
   phone: string
   city: string
   district: string
+  street: string
   address: string
 }
 
