@@ -108,5 +108,3 @@ This project was built using AI-assisted development tools:
 All code has been reviewed, tested, and validated for production readiness.
 
 ---
-
-**Built for educational & portfolio purposes** • June 2026
