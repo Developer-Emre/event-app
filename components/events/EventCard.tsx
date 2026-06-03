@@ -5,9 +5,10 @@ import Badge from '@/components/ui/Badge'
 
 interface EventCardProps {
   event: Event
+  priority?: boolean
 }
 
-export default function EventCard({ event }: EventCardProps) {
+export default function EventCard({ event, priority = false }: EventCardProps) {
   const eventDate = new Date(event.date)
   const formattedDate = eventDate.toLocaleDateString('tr-TR', {
     day: 'numeric',
@@ -29,22 +30,15 @@ export default function EventCard({ event }: EventCardProps) {
   return (
     <Link href={`/event/${event.slug}`}>
       <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer border border-gray-100">
-        <div className="relative h-48 w-full bg-gradient-to-br from-orange-100 to-amber-100">
-          <div className="absolute inset-0 flex items-center justify-center text-orange-300">
-            <svg
-              className="w-16 h-16"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-              />
-            </svg>
-          </div>
+        <div className="relative h-48 w-full bg-gray-100">
+          <Image
+            src={event.imageUrl}
+            alt={event.title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            priority={priority}
+          />
         </div>
         <div className="p-5">
           <div className="flex items-start justify-between mb-2">

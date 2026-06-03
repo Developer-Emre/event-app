@@ -6,7 +6,7 @@
     "description": "Experience the magic of Coldplay live in Istanbul. The Music of the Spheres World Tour brings an unforgettable spectacle of lights, music, and energy.",
     "date": "2026-08-15T20:00:00Z",
     "category": "concert",
-    "imageUrl": "/images/coldplay.jpg",
+    "imageUrl": "/images/coldplay.webp",
     "price": 850,
     "location": {
       "city": "Istanbul",
@@ -32,7 +32,7 @@
     "description": "A modern interpretation of Shakespeare's timeless tragedy. Experience the psychological depth of Hamlet in this powerful theatrical production.",
     "date": "2026-07-22T19:30:00Z",
     "category": "theater",
-    "imageUrl": "/images/hamlet.jpg",
+    "imageUrl": "/images/hamlet.webp",
     "price": 250,
     "location": {
       "city": "Ankara",
@@ -56,7 +56,7 @@
     "description": "The biggest derby in Turkish football! Don't miss the intense rivalry between Fenerbahçe and Galatasaray at Şükrü Saracoğlu Stadium.",
     "date": "2026-09-10T19:00:00Z",
     "category": "sports",
-    "imageUrl": "/images/derby.jpg",
+    "imageUrl": "/images/derby.webp",
     "price": 500,
     "location": {
       "city": "Istanbul",
@@ -81,7 +81,7 @@
     "description": "Join leading tech innovators and AI experts at Turkey's premier technology conference. Network with industry leaders and discover the future of tech.",
     "date": "2026-10-05T09:00:00Z",
     "category": "conference",
-    "imageUrl": "/images/tech-summit.jpg",
+    "imageUrl": "/images/tech-summit.webp",
     "price": 1200,
     "location": {
       "city": "Izmir",
@@ -105,7 +105,7 @@
     "description": "A magnificent performance of Beethoven's Ninth Symphony featuring the Istanbul Symphony Orchestra and Choir.",
     "date": "2026-11-12T20:00:00Z",
     "category": "concert",
-    "imageUrl": "/images/beethoven.jpg",
+    "imageUrl": "/images/beethoven.webp",
     "price": 350,
     "location": {
       "city": "Istanbul",
@@ -128,7 +128,7 @@
     "description": "An evening of breathtaking contemporary dance performances by international and local artists.",
     "date": "2026-08-30T19:00:00Z",
     "category": "theater",
-    "imageUrl": "/images/dance.jpg",
+    "imageUrl": "/images/dance-festival.webp",
     "price": 180,
     "location": {
       "city": "Ankara",
@@ -150,7 +150,7 @@
     "description": "The return of F1 to Istanbul Park! Watch the world's best drivers compete on one of the most challenging circuits.",
     "date": "2026-09-20T14:00:00Z",
     "category": "sports",
-    "imageUrl": "/images/f1.jpg",
+    "imageUrl": "/images/formula.webp",
     "price": 2500,
     "location": {
       "city": "Istanbul",
@@ -174,7 +174,7 @@
     "description": "Connect with startup founders, VCs, and entrepreneurs. Learn from successful founders and grow your network.",
     "date": "2026-07-15T10:00:00Z",
     "category": "conference",
-    "imageUrl": "/images/startup.jpg",
+    "imageUrl": "/images/startup-founders.webp",
     "price": 800,
     "location": {
       "city": "Izmir",
@@ -197,7 +197,7 @@
     "description": "An unforgettable evening of smooth jazz featuring renowned international and Turkish jazz musicians.",
     "date": "2026-10-18T21:00:00Z",
     "category": "concert",
-    "imageUrl": "/images/jazz.jpg",
+    "imageUrl": "/images/jazz-night.webp",
     "price": 300,
     "location": {
       "city": "Ankara",
@@ -220,7 +220,7 @@
     "description": "The thrilling finale of the Turkish Basketball League. Watch the best teams compete for the championship title.",
     "date": "2026-06-25T19:30:00Z",
     "category": "sports",
-    "imageUrl": "/images/basketball.jpg",
+    "imageUrl": "/images/basketball.webp",
     "price": 400,
     "location": {
       "city": "Izmir",
@@ -245,7 +245,7 @@
     "description": "A hands-on workshop exploring design thinking methodologies and innovation strategies for product development.",
     "date": "2026-08-05T10:00:00Z",
     "category": "conference",
-    "imageUrl": "/images/design.jpg",
+    "imageUrl": "/images/design-thinking.webp",
     "price": 650,
     "location": {
       "city": "Istanbul",
@@ -267,7 +267,7 @@
     "description": "A stunning ballet adaptation of Shakespeare's tragic love story, performed by the Istanbul State Opera and Ballet.",
     "date": "2026-09-28T19:30:00Z",
     "category": "theater",
-    "imageUrl": "/images/ballet.jpg",
+    "imageUrl": "/images/romeo-and-juilet.webp",
     "price": 280,
     "location": {
       "city": "Istanbul",
