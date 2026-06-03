@@ -85,7 +85,6 @@ npm start
 2. Import at [vercel.com/new](https://vercel.com/new)
 3. Deploy (auto-configured)
 
-See `DEPLOYMENT.md` for detailed guide.
 
 ## 📊 Statistics
 
@@ -97,4 +96,17 @@ See `DEPLOYMENT.md` for detailed guide.
 
 ---
 
-**Built with AI assistance** • Educational & portfolio purposes • June 2026
+## 🤖 AI Usage Disclosure
+
+This project was built using AI-assisted development tools:
+
+- **GitHub Copilot Agent**: Full-stack implementation (frontend, backend, state management, testing)
+- **UI/UX Design**: Pro-level component architecture and responsive design patterns
+- **Code Quality**: TypeScript strict mode, Redux best practices, accessibility standards
+- **Testing Strategy**: Jest + RTL test suites with comprehensive coverage
+
+All code has been reviewed, tested, and validated for production readiness.
+
+---
+
+**Built for educational & portfolio purposes** • June 2026
